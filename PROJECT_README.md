@@ -4,39 +4,36 @@ A Python module for fetching and filtering SEC EDGAR filings.
 
 ## Installation
 ```bash
-# Clone the repository
+# Clone the repository onto machine
 git clone https://github.com/YOUR_USERNAME/sec_filing_connector.git
 cd sec_filing_connector
 
 # Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv\Scripts\activate
 
-# Install package
+# Install package e
 pip install -e .
 ```
-
-## Running Tests
+## Running the Tests
 ```bash
 pytest tests/ -v
 ```
-
-All tests should pass.
 
 ## Usage
 
 ### CLI Examples
 ```bash
-# List all filings for a company
+# List all filings for a certain company
 python -m sec_connector.cli AAPL
 
-# Filter by form type
+# Filter by form type specifically
 python -m sec_connector.cli AAPL --form 10-K
 
-# Filter by date range
+# Filter by specified date range
 python -m sec_connector.cli AAPL --date-from 2024-01-01 --date-to 2024-12-31
 
-# Limit results
+# Limit the results
 python -m sec_connector.cli AAPL --limit 5
 
 # JSON output
@@ -74,26 +71,12 @@ for filing in filings:
 sec_filing_connector/
 ├── sec_connector/
 │   ├── __init__.py
-│   ├── models.py      # Pydantic data models
-│   ├── client.py      # Core SEC client logic
-│   └── cli.py         # Command-line interface
+│   ├── models.py
+│   ├── client.py
+│   └── cli.py
 ├── tests/
-│   ├── fixtures/      # Test data
-│   └── test_client.py # Unit tests
+│   ├── fixtures/
+│   └── test_client.py
 ├── pyproject.toml
 └── README.md
 ```
-
-## Features
-
-- ✅ Company lookup by ticker
-- ✅ Filing filtering by form type
-- ✅ Date range filtering
-- ✅ Result limiting
-- ✅ Type-safe with Pydantic models
-- ✅ Comprehensive test coverage
-- ✅ CLI and Python API
-
-## Time Spent
-
-Approximately 2-3 hours as specified in the assessment.
